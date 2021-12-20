@@ -8,12 +8,13 @@ const SideBar = () => {
     const history = useHistory();
     const location = useLocation();
     return (
-        <div className="mt-5 " >
+        <div style={{position: 'fixed'}} className="mt-5" >
         <Navigation
             // you can use your own router's api to get pathname
             activeItemId={location.pathname}
             onSelect={({ itemId }) => {
                 history.push(itemId);
+                window.scroll(0,0);
               }}
             items={[
               {
