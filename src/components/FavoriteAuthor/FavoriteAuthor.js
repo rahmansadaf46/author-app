@@ -38,7 +38,7 @@ const FavoriteAuthor = () => {
                     <div className="d-flex justify-content-center  mt-5">
                         <div className="row container-fluid">
                             {authors?.map(author => <div key={author._id} className="col-6 p-3">
-                                <div style={{ border: '4px solid orange', height: '380px' }} >
+                                <div style={{ border: '4px solid orange', height: '500px' }} >
                                     <div className="p-5">
                                         <div className="row">
                                             <div className="col-6">

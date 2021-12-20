@@ -46,7 +46,7 @@ const Author = () => {
 
     function MyComponent2() {
         useEffect(() => {
-            fetch('https://api.quotable.io/authors')
+            fetch('https://api.quotable.io/authors?limit=120')
                 .then(res => res.json())
                 .then(data => {
                     const authorData = data?.results;
@@ -67,16 +67,19 @@ const Author = () => {
     return (
         <div>
             <div className="d-flex">
-                <div style={{ background: 'white', minHeight: '120vh' }} className="col-2">
+                <div style={{ background: 'white', minHeight: '130vh' }} className="col-2">
                     <SideBar></SideBar>
                 </div>
                 <div style={{ background: '#FFDBDB' }} className="col-10 container">
                     <div className="text-center"><h1 className="text-primary mt-4">Author List</h1></div>
-
+                    {currentData.length <= 0 && <div className="text-center ">
+                    <img style={{ width: "65vh" }} className="rounded mx-auto d-block " src="https://webstockreview.net/images/gear-clipart-setting-5.gif" alt="" />
+                    </div>}
                     <div className="d-flex justify-content-center  mt-5">
-                        <div className="row container-fluid">
+                    
+                        <div className="row container-fluid">                     
                             {currentData?.map(author => <div key={author._id} className="col-6 p-3">
-                                <div style={{ border: '4px solid pink',height:'380px' }} >
+                                <div style={{ border: '4px solid pink',minHeight:'500px',height:'400px' }} >
                                     <div className="p-5">
                                     <div className="row">
                                         <div className="col-6">
